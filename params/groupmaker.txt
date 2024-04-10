@@ -1,0 +1,24 @@
+d	a	g
+2.10E-05		NM
+1.002522		NM
+2.00436		NM
+144.101962		NM
+21.98071		NM
+-144.102604		NM
+3.00555		NM
+-18.011303		NM
+14.015224		methylation
+15.017638		methylation
+15.995141		mono-oxi
+16.997389		mono-oxi
+31.989924		dioxi
+28.030575		dimethylation
+29.032269		dimethylation
+3.996907		kynurenin
+22.98312		NM
+27.994753		formylation-art
+57.020944		NM
+-13.013315		CH3 loss
+-14.016818		CH3 loss
+-17.009677		NM
+43.006849		NM
