@@ -23,7 +23,7 @@ workflow REFRAG {
     //
     // SUBMODULE: execute ReFrag
     //
-    RE_FRAG(raw_msf_files, dm_file, params_file)
+    RE_FRAG('01', raw_msf_files, dm_file, params_file)
 
     // return channels
     ch_ofile         = RE_FRAG.out.ofile
