@@ -3,7 +3,7 @@ Nextflow for ReFrag pipeline
 
 # Usage
 
-Debugging using Ubuntu and Singularity (WSL - backend):
+Executing using Ubuntu and Singularity (WSL - backend):
 ```
 cd /home/jmrodriguezc/nf-ReFrag
 
