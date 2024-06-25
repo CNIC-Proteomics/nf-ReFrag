@@ -1,0 +1,123 @@
+{
+"$schema": "http://json-schema.org/draft-07/schema",
+"$id": "https://raw.githubusercontent.com/CNIC-Proteomics/nf-ReFrag/main/nextflow_schema.json",
+"title": "ReFrag",
+"description": "Nextflow for the ReFrag pipeline.",
+"url": "https://github.com/CNIC-Proteomics/nf-ReFrag",
+"revision": "main",
+"icon": "",
+"status": 0,
+"type": "object",
+"definitions": {
+    "input_output_options": {
+			"title": "Input/Output options",
+			"type": "object",
+			"fa_icon": "pi pi-box",
+			"description": "Inputs and outputs required for the pipeline",
+			"required": [
+					"raw_files",
+					"msf_files",
+					"dm_file",
+					"decoy_prefix",
+					"outdir"
+			],
+			"properties": {
+				"raw_files": {
+					"title": "MS data",
+					"description": "MS data files (.raw format)",
+					"help_text": "Under construction...",
+					"fa_icon": "pi pi-folder",
+					"type": "string",
+					"format": "directory-path",
+					"default": "",
+					"mimetype": "text/plain"
+				},
+				"msf_files": {
+					"title": "MSFragger results",
+					"description": "MSFragger results in TSV format",
+					"help_text": "Under construction...",
+					"fa_icon": "pi pi-folder",
+					"type": "string",
+					"format": "directory-path",
+					"default": "",
+					"mimetype": "text/plain"
+				},
+				"dm_file": {
+					"title": "Theoretical ΔMass table",
+					"description": "DM file with the Theoretical ΔMass table",
+					"help_text": "Under construction...",
+					"fa_icon": "pi pi-database",
+					"type": "string",
+					"format": "file-path",
+					"default": "",
+					"pattern": "^\\S+\\.(?:fasta|fa)$"
+				},
+				"decoy_prefix": {
+					"title": "Decoy prefix",
+					"description": "Pre- or suffix of decoy proteins in their accession",
+					"help_text": "Under construction...",
+					"fa_icon": "pi pi-pen-to-square",
+					"type": "string",
+					"format": "string",
+					"default": "DECOY_"
+				},
+				"scanrange": {
+					"title": "Scan range to seach",
+					"description": "Scan range to seach, comma-separated. E.g. 1000,2000 will search all scans with IDs between 1000 and 2000. By default, the full range is searched.",
+					"help_text": "Under construction...",
+					"fa_icon": "pi pi-pen-to-square",
+					"type": "string",
+					"format": "string",
+					"default": ""
+				}
+			}
+    },
+    "parameter_options": {
+			"title": "Parameter options",
+			"type": "object",
+			"fa_icon": "pi pi-table",
+			"description": "Outputs required for the pipeline",
+			"required": [
+				"params_file"
+			],
+			"properties": {
+				"params_file": {
+					"title": "Parameter file",
+					"description": "File with the parameter for the programs in INI format",
+					"help_text": "Under construction...",
+					"fa_icon": "pi pi-file-import",
+					"type": "string",
+					"format": "file-path",
+					"mimetype": "text/plain"
+				}
+			}
+    },
+    "output_options": {
+			"title": "Output options",
+			"type": "object",
+			"fa_icon": "fas fa-terminal",
+			"description": "Outputs required for the pipeline",
+			"required": [
+				"outdir"
+			],
+			"properties": {
+				"outdir": {
+					"title": "Output directory",
+					"description": "The output directory where the results will be saved.",
+					"help_text": "Under construction...",
+					"fa_icon": "fas fa-folder-open",
+					"type": "string",
+					"format": "directory-path"
+				}
+			}
+    }
+},
+"allOf": [
+    {
+        "$ref": "#/definitions/input_output_options"
+    },
+    {
+        "$ref": "#/definitions/parameter_options"
+    }
+]
+}
