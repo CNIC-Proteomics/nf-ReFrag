@@ -1,15 +1,15 @@
 {
-"$schema": "http://json-schema.org/draft-07/schema",
-"$id": "https://raw.githubusercontent.com/CNIC-Proteomics/nf-ReFrag/main/nextflow_schema.json",
-"title": "ReFrag",
-"description": "Nextflow for the ReFrag pipeline.",
-"url": "https://github.com/CNIC-Proteomics/nf-ReFrag",
-"revision": "main",
-"icon": "",
-"status": 0,
-"type": "object",
-"definitions": {
-    "input_output_options": {
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "https://raw.githubusercontent.com/CNIC-Proteomics/nf-ReFrag/main/nextflow_schema.json",
+	"title": "ReFrag",
+	"description": "Nextflow for the ReFrag pipeline.",
+	"url": "https://github.com/CNIC-Proteomics/nf-ReFrag",
+	"revision": "main",
+	"icon": "",
+	"status": 0,
+	"type": "object",
+	"definitions": {
+		"input_output_options": {
 			"title": "Input/Output options",
 			"type": "object",
 			"fa_icon": "pi pi-box",
@@ -24,8 +24,8 @@
 			"properties": {
 				"raw_files": {
 					"title": "MS data",
-					"description": "MS data files (.raw format)",
-					"help_text": "Under construction...",
+					"description": "MS data files",
+					"help_text": "MS data files in mzML (recommended) or MGF format",
 					"fa_icon": "pi pi-folder",
 					"type": "string",
 					"format": "directory-path",
@@ -34,8 +34,8 @@
 				},
 				"msf_files": {
 					"title": "MSFragger results",
-					"description": "MSFragger results in TSV format",
-					"help_text": "Under construction...",
+					"description": "MSFragger results",
+					"help_text": "MSFragger results in TSV format",
 					"fa_icon": "pi pi-folder",
 					"type": "string",
 					"format": "directory-path",
@@ -55,7 +55,7 @@
 				"decoy_prefix": {
 					"title": "Decoy prefix",
 					"description": "Pre- or suffix of decoy proteins in their accession",
-					"help_text": "Under construction...",
+					"help_text": "",
 					"fa_icon": "pi pi-pen-to-square",
 					"type": "string",
 					"format": "string",
@@ -63,16 +63,16 @@
 				},
 				"scanrange": {
 					"title": "Scan range to seach",
-					"description": "Scan range to seach, comma-separated. E.g. 1000,2000 will search all scans with IDs between 1000 and 2000. By default, the full range is searched.",
-					"help_text": "Under construction...",
+					"description": "Scan range to seach, comma-separated",
+					"help_text": "E.g. 1000,2000 will search all scans with IDs between 1000 and 2000. By default, the full range is searched.",
 					"fa_icon": "pi pi-pen-to-square",
 					"type": "string",
 					"format": "string",
 					"default": ""
 				}
 			}
-    },
-    "parameter_options": {
+		},
+		"parameter_options": {
 			"title": "Parameter options",
 			"type": "object",
 			"fa_icon": "pi pi-table",
@@ -91,8 +91,8 @@
 					"mimetype": "text/plain"
 				}
 			}
-    },
-    "output_options": {
+		},
+		"output_options": {
 			"title": "Output options",
 			"type": "object",
 			"fa_icon": "fas fa-terminal",
@@ -110,14 +110,14 @@
 					"format": "directory-path"
 				}
 			}
-    }
-},
-"allOf": [
-    {
-        "$ref": "#/definitions/input_output_options"
-    },
-    {
-        "$ref": "#/definitions/parameter_options"
-    }
-]
+		}
+	},
+	"allOf": [
+			{
+					"$ref": "#/definitions/input_output_options"
+			},
+			{
+					"$ref": "#/definitions/parameter_options"
+			}
+	]
 }

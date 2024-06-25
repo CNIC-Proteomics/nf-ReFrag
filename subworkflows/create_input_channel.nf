@@ -100,14 +100,19 @@ workflow CREATE_INPUT_CHANNEL_PTMCOMPASS {
     sitelist_file   = Channel.fromPath("${params.sitelist_file}", checkIfExists: true)
     groupmaker_file = Channel.fromPath("${params.groupmaker_file}", checkIfExists: true)
 
+    // // update the given parameter into the fixed parameter file
+    // def redefinedParams = ['decoy_prefix': params.decoy_prefix]
+    // def updated_params_str = Utils.updateParamsFile(params.fixed_params_file, redefinedParams)
+    // def fixed_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
+
+    // // merge the files that contain both the fixed parametes and the variable parameters
+    // def merged_params_str = Utils.mergeIniFiles(fixed_params_file, params.params_file)
+    // def updated_params_file = Utils.writeStrIntoFile(merged_params_str, "${params.paramdir}/params.ini")
+
     // update the given parameter into the fixed parameter file
     def redefinedParams = ['decoy_prefix': params.decoy_prefix]
-    def updated_params_str = Utils.updateParamsFile(params.fixed_params_file, redefinedParams)
-    def fixed_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
-
-    // merge the files that contain both the fixed parametes and the variable parameters
-    def merged_params_str = Utils.mergeIniFiles(fixed_params_file, params.params_file)
-    def updated_params_file = Utils.writeStrIntoFile(merged_params_str, "${params.paramdir}/params.ini")
+    def updated_params_str = Utils.updateParamsFile(params.params_file, redefinedParams)
+    def updated_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
 
     // create channel for params file
     params_file = Channel.value("${updated_params_file}")
@@ -138,12 +143,8 @@ workflow CREATE_INPUT_CHANNEL_PTMCOMPASS_1 {
 
     // update the given parameter into the fixed parameter file
     def redefinedParams = ['decoy_prefix': params.decoy_prefix]
-    def updated_params_str = Utils.updateParamsFile(params.fixed_params_file, redefinedParams)
-    def fixed_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
-
-    // merge the files that contain both the fixed parametes and the variable parameters
-    def merged_params_str = Utils.mergeIniFiles(fixed_params_file, params.params_file)
-    def updated_params_file = Utils.writeStrIntoFile(merged_params_str, "${params.paramdir}/params.ini")
+    def updated_params_str = Utils.updateParamsFile(params.params_file, redefinedParams)
+    def updated_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
 
     // create channel for params file
     // these files will be used multiple times; So, we have to create a Value Channel and then, check if file exists
@@ -180,12 +181,8 @@ workflow CREATE_INPUT_CHANNEL_REFRAG {
 
     // update the given parameter into the fixed parameter file
     def redefinedParams = ['decoy_prefix': params.decoy_prefix]
-    def updated_params_str = Utils.updateParamsFile(params.fixed_params_file, redefinedParams)
-    def fixed_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
-
-    // merge the files that contain both the fixed parametes and the variable parameters
-    def merged_params_str = Utils.mergeIniFiles(fixed_params_file, params.params_file)
-    def updated_params_file = Utils.writeStrIntoFile(merged_params_str, "${params.paramdir}/params.ini")
+    def updated_params_str = Utils.updateParamsFile(params.params_file, redefinedParams)
+    def updated_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
 
     // create channel for params file
     // these files will be used multiple times; So, we have to create a Value Channel and then, check if file exists
@@ -210,12 +207,8 @@ workflow CREATE_INPUT_CHANNEL_SHIFTS {
 
     // update the given parameter into the fixed parameter file
     def redefinedParams = []
-    def updated_params_str = Utils.updateParamsFile(params.fixed_params_file, redefinedParams)
-    def fixed_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
-
-    // merge the files that contain both the fixed parametes and the variable parameters
-    def merged_params_str = Utils.mergeIniFiles(fixed_params_file, params.params_file)
-    def updated_params_file = Utils.writeStrIntoFile(merged_params_str, "${params.paramdir}/params.ini")
+    def updated_params_str = Utils.updateParamsFile(params.params_file, redefinedParams)
+    def updated_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
 
     // create channel for params file
     params_file = Channel.value("${updated_params_file}")
@@ -243,12 +236,8 @@ workflow CREATE_INPUT_CHANNEL_SOLVER {
 
     // update the given parameter into the fixed parameter file
     def redefinedParams = ['decoy_prefix': params.decoy_prefix]
-    def updated_params_str = Utils.updateParamsFile(params.fixed_params_file, redefinedParams)
-    def fixed_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
-
-    // merge the files that contain both the fixed parametes and the variable parameters
-    def merged_params_str = Utils.mergeIniFiles(fixed_params_file, params.params_file)
-    def updated_params_file = Utils.writeStrIntoFile(merged_params_str, "${params.paramdir}/params.ini")
+    def updated_params_str = Utils.updateParamsFile(params.params_file, redefinedParams)
+    def updated_params_file = Utils.writeStrIntoFile(updated_params_str, "${params.paramdir}/params.ini")
 
     // create channel for params file
     params_file = Channel.value("${updated_params_file}")
